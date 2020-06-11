@@ -78,6 +78,22 @@ class ConversationPageData {
       unreadMsgCount: 0,
     ),
     const Conversation(
+      avatar: 'https://randomuser.me/api/portraits/men/10.jpg',
+      title: '汤姆丁',
+      des: '今晚要一起去吃肯德基吗？',
+      updateAt: '17:56',
+      isMute: true,
+      unreadMsgCount: 0,
+    ),
+    const Conversation(
+      avatar: 'https://randomuser.me/api/portraits/men/10.jpg',
+      title: '汤姆丁',
+      des: '今晚要一起去吃肯德基吗？',
+      updateAt: '17:56',
+      isMute: true,
+      unreadMsgCount: 0,
+    ),
+    const Conversation(
       avatar: 'https://randomuser.me/api/portraits/women/10.jpg',
       title: 'Tina Morgan',
       des: '晚自习是什么来着？你知道吗，看到的话赶紧回复我',

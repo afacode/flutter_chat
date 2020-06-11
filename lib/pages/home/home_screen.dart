@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wechat_app/config/theme.dart';
 import 'package:wechat_app/constants.dart';
+import 'package:wechat_app/pages/about/about_screen.dart';
 import 'package:wechat_app/pages/chat/chat_screen.dart';
  
 class HomeScreen extends StatefulWidget {
@@ -11,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 3;
   List<Widget> _topBarActions;
   List<Widget> _functionActions;
   List<Widget> _pages;
@@ -109,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ChatScreen(),
       Container(color: Colors.yellow,),
       Container(color: Colors.blue,),
-      Container(color: Colors.green,),
+      AboutScreen(),
     ];
   }  
 
