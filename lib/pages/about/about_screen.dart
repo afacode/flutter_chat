@@ -10,45 +10,36 @@ class AboutScreen extends StatefulWidget {
 class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.red,);
-    // Provider<AboutProvider>(
+    // return ChangeNotifierProvider(
     //   create: (_) => AboutProvider(),
-    //   child: Text(context.watch<AboutProvider>())
+    //   child: Demo(),
     // );
-    //   child: Container(
-    //     color: Colors.white,
-    //     child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.center,
-    //         crossAxisAlignment: CrossAxisAlignment.center,
-    //         children: [
-    //           Text(
-    //             '${context.watch<AboutProvider>().count}',
-    //             style: TextStyle(
-    //                 fontSize: 42.0,
-    //                 color: Colors.red,
-    //                 fontWeight: FontWeight.bold),
-    //           ),
-    //           Add(),
-    //         ]),
-    //   ),
-    // );
-    
+    return MultiProvider(
+      providers: [
+        Provider<AboutProvider>(create: (_) => AboutProvider()),
+      ],
+      child: Demo(),
+    );
+    // return Demo();
   }
 }
 
-// class Add extends StatelessWidget {
-//   const Add({Key key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: FlatButton(
-//           onPressed: () {
-//             context.read<AboutProvider>().add();
-//           },
-//           textColor: Colors.white,
-//           color: Colors.blue,
-//           child: Text('+')),
-//     );
-//   }
-// }
+class Demo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AboutProvider provider = Provider.of(context);
+    return Container(
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text('${context.watch<AboutProvider>().count}'),
+        FlatButton(
+          onPressed: () {
+            provider.add();
+          },
+          child: Text('+'),
+        ),
+      ],
+    ));
+  }
+}
