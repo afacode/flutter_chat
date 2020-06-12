@@ -12,6 +12,10 @@ dependencies:
   cupertino_icons: ^0.1.3
   provider: 
   shared_preferences:
+  camera: ^0.5.8+2
+  path_provider: ^1.6.10
+  uuid:
+  image_picker_saver: ^0.3.0
 
 dev_dependencies:
   flutter_test:
